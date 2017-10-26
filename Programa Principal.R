@@ -1,6 +1,6 @@
 
 #Instala Shiny
-install.packages("shiny")
+#install.packages("shiny")
 
 # Carga de la librería shiny
 library(shiny)
