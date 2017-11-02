@@ -18,8 +18,8 @@ download.file("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalid
 load(unzip("Datos.zip"))
 
 # Carga interface y programación de la aplicación
-source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/ui.R")
-source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/server.R")
+source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/ui.R",encoding="UTF-8")
+source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/server.R",encoding="UTF-8")
 
 #Ejecuta el programa
 shinyApp(ui,server)
