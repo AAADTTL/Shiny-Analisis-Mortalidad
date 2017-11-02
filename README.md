@@ -11,4 +11,4 @@ Datos.zip contiene el "workspace" de R denominado Datos.RData el cual almacena l
   * Código CCAA y provincias.csv: contiene información del código de provincia para poder incluir datos.
   * EV.px: información de mortalidad del INE.
   * TABLA_INFORMACION: información de compañía.
-  * Provincias_ETRS89_30N.shp: Provincias_ETRS89_30N.shp es "shapefile" que contiene la información de provincias para poder graficar el mapa de españa con esta desagregación.
+  * Provincias_ETRS89_30N.shp: Provincias_ETRS89_30N.shp es "shapefile" que contiene la información de provincias para poder graficar el mapa de españa con esta desagregación.
