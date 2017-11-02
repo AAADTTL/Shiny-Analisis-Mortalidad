@@ -1,7 +1,26 @@
 
-# Carga de la librería shiny
+# Carga de librarías
 library(shiny)
+library(shinythemes)
+
+library(maptools)
+library(RColorBrewer)
+library(ggmap)
+library(classInt)
+library(rgeos)
+library(sqldf)
+library(pxR)
+library(reshape2)
+
+# Carga Datos
+download.file("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/Datos.zip",
+              "Datos.zip",method="auto")
+load(unzip("Datos.zip"))
+
+# Carga interface y programación de la aplicación
+source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/ui.R")
+source("https://raw.githubusercontent.com/AAADTTL/Shiny-Analisis-Mortalidad/master/server.R")
 
 #Ejecuta el programa
-runApp("K:/Clientes/Proyectos/Zurich/2017/2. Tablas de Mortalidad/3.Work/8. Investigación/Shiny/JMG")
+shinyApp(ui,server)
 

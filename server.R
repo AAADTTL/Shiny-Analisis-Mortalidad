@@ -1,7 +1,7 @@
 server<-shinyServer(function(input, output) {
   
   #Se define la cabecera de la tabla con condicionales
-  output$cabecera <- renderText(paste("Análisis para",
+  output$cabecera <- renderText(paste(readLines(textConnection("Análisis para",encoding="UTF-8"),encoding="UTF-8"),
                                       eval(
                                         if(input$desglose_anyos == FALSE){
                                           if(input$sexo != "X"){
@@ -14,26 +14,26 @@ server<-shinyServer(function(input, output) {
                                             if(input$sexo == "V") "hombres"
                                             else "mujeres"
                                           }else "ambos sexos"
-                                          ,paste("en el año",input$n)
+                                          ,paste(readLines(textConnection("en el año",encoding="UTF-8"),encoding="UTF-8"),input$n)
                                         )}
                                       )
   ))
   
   #Se define la cabecera del gráfico
-  output$cabecera2 <- renderText(paste("Gráfico mortalidad por producto (",
+  output$cabecera2 <- renderText(paste(readLines(textConnection("Gráfico mortalidad por producto (",encoding="UTF-8"),encoding="UTF-8"),
                                        eval(
                                          if(input$desglose_anyos == FALSE){
                                            if(input$sexo != "X"){
-                                             if(input$sexo == "V") "Sexo: Hombre, Año: 2008-2016)"
-                                             else "Sexo: Mujer, Año: 2008-2016)"
-                                           }else "Sexo: Ambos sexos, Año: 2008-2016)"
+                                             if(input$sexo == "V") readLines(textConnection("Sexo: Hombre, Año: 2008-2016)",encoding="UTF-8"),encoding="UTF-8")
+                                             else readLines(textConnection("Sexo: Mujer, Año: 2008-2016)",encoding="UTF-8"),encoding="UTF-8")
+                                           }else readLines(textConnection("Sexo: Ambos sexos, Año: 2008-2016)",encoding="UTF-8"),encoding="UTF-8")
                                          }
                                          else{paste(
                                            if(input$sexo != "X"){
                                              if(input$sexo == "V") "Sexo: Hombre, "
                                              else "Sexo: Mujer, "
                                            }else "Sexo: Ambos sexos, "
-                                           ,paste(paste("Año:",input$n),")")
+                                           ,paste(paste(readLines(textConnection("Año:",encoding="UTF-8"),encoding="UTF-8"),input$n),")")
                                          )}
                                        )
   ))
@@ -160,7 +160,7 @@ server<-shinyServer(function(input, output) {
     class<-classIntervals(plotvar,nclr,n=10,style="quantile")
     colcode<-findColours(class,plotclr)
     
-    if(input$variable=="Prom_anyos") titulo<-"Promedio de años vividos el último año de vida"
+    if(input$variable=="Prom_anyos") titulo<-readLines(textConnection("Promedio de años vividos el último año de vida",encoding="UTF-8"),encoding="UTF-8")
     else if(input$variable=="Riesgo_muerte") titulo<-"Riesgo de muerte"
     else if(input$variable=="Supervivientes") titulo<-"Supervivientes"
     else if(input$variable=="Def_Teo") titulo<-"Defunciones teóricas"
